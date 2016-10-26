@@ -6,5 +6,7 @@ type ApplicationJSON struct {
 	ID             string   `json:"id"`
 	AppName        string   `json:"app_name,omitempty"`
 	AppDescription string   `json:"app_description,omitempty"`
+	AppURL         string   `json:"app_url"`
+	AppIcon        string   `json:"app_icon,omitempty"`
 	Members        []string `json:"members"`
 }

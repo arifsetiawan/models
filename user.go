@@ -2,23 +2,24 @@ package models
 
 // User is representation of data for IDP
 type User struct {
-	Type           string      `json:"_type,omitempty"`
-	UserID         string      `json:"user_id"`
-	Username       string      `json:"username"`
-	Email          string      `json:"email"`
-	Name           string      `json:"name"`
-	PositionID     string      `json:"position_id,omitempty"`
-	Position       string      `json:"position,omitempty"`
-	Organization   string      `json:"organization,omitempty"`
-	Group          []string    `json:"groups"`
-	Identities     []Identity  `json:"identities,omitempty"`
-	ProfilePicture string      `json:"profile_picture,omitempty"`
-	CreatedAt      string      `json:"created_at,omitempty"`
-	UpdatedAt      string      `json:"updated_at,omitempty"`
-	LastIP         string      `json:"last_ip,omitempty"`
-	LastLogin      string      `json:"last_login,omitempty"`
-	UserMetadata   interface{} `json:"user_metadata"`
-	AppMetadata    interface{} `json:"app_metadata"`
+	Type           string            `json:"_type,omitempty"`
+	UserID         string            `json:"user_id"`
+	Username       string            `json:"username"`
+	Email          string            `json:"email"`
+	Name           string            `json:"name"`
+	PositionID     string            `json:"position_id,omitempty"`
+	Position       string            `json:"position,omitempty"`
+	Organization   string            `json:"organization,omitempty"`
+	Groups         []string          `json:"groups"`
+	Apps           []ApplicationJSON `json:"apps"`
+	Identities     []Identity        `json:"identities,omitempty"`
+	ProfilePicture string            `json:"profile_picture,omitempty"`
+	CreatedAt      string            `json:"created_at,omitempty"`
+	UpdatedAt      string            `json:"updated_at,omitempty"`
+	LastIP         string            `json:"last_ip,omitempty"`
+	LastLogin      string            `json:"last_login,omitempty"`
+	UserMetadata   interface{}       `json:"user_metadata"`
+	AppMetadata    interface{}       `json:"app_metadata"`
 }
 
 // UserInternal is representation for Internal Database
@@ -54,4 +55,5 @@ type Identity struct {
 	UserID       string `json:"user_id"`
 	RefreshToken string `json:"refresh_token,omitempty"`
 	ExpireIn     string `json:"expire_in,omitempty"`
+	AccessToken  string `json:"access_token,omitempty"`
 }
