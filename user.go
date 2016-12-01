@@ -3,6 +3,7 @@ package models
 // User is representation of data for IDP
 type User struct {
 	Type           string            `json:"_type,omitempty"`
+	TenantID       string            `json:"tenant_id,omitempty"`
 	UserID         string            `json:"user_id"`
 	Username       string            `json:"username"`
 	Email          string            `json:"email"`
@@ -25,6 +26,7 @@ type User struct {
 // UserInternal is representation for Internal Database
 type UserInternal struct {
 	Type           string   `json:"_type,omitempty"`
+	TenantID       string   `json:"tenant_id,omitempty"`
 	UserID         string   `json:"user_id"`
 	Name           string   `json:"name"`
 	Username       string   `json:"username"`

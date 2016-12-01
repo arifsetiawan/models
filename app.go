@@ -3,6 +3,7 @@ package models
 // ApplicationJSON is a struct representation for Application Object
 type ApplicationJSON struct {
 	Type           string   `json:"_type,omitempty"`
+	TenantID       string   `json:"tenant_id,omitempty"`
 	ID             string   `json:"id"`
 	AppName        string   `json:"app_name,omitempty"`
 	AppDescription string   `json:"app_description,omitempty"`
