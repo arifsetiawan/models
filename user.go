@@ -2,15 +2,15 @@ package models
 
 // User is representation of data for IDP
 type User struct {
-	Type           string            `json:"_type,omitempty"`
-	TenantID       string            `json:"tenant_id,omitempty"`
-	UserID         string            `json:"user_id"`
-	Username       string            `json:"username"`
-	Email          string            `json:"email"`
-	Name           string            `json:"name"`
-	PositionID     string            `json:"position_id,omitempty"`
-	Position       string            `json:"position,omitempty"`
-	Organization   string            `json:"organization,omitempty"`
+	Type           string            `json:"_type,omitempty" csv:"_type,omitempty"`
+	TenantID       string            `json:"tenant_id,omitempty" csv:"tenant_id,omitempty"`
+	UserID         string            `json:"user_id" csv:"user_id,omitempty"`
+	Username       string            `json:"username" csv:"username,omitempty"`
+	Email          string            `json:"email" csv:"email,omitempty"`
+	Name           string            `json:"name" csv:"name,omitempty"`
+	PositionID     string            `json:"position_id,omitempty" csv:"position_id,omitempty"`
+	Position       string            `json:"position,omitempty" csv:"position,omitempty"`
+	Organization   string            `json:"organization,omitempty" csv:"organization,omitempty"`
 	Groups         []string          `json:"groups"`
 	Apps           []ApplicationJSON `json:"apps"`
 	Identities     []Identity        `json:"identities,omitempty"`
