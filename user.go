@@ -2,6 +2,7 @@ package models
 
 // User is representation of data for IDP
 type User struct {
+	ID             string            `json:"_id"`
 	Type           string            `json:"_type,omitempty" csv:"_type,omitempty"`
 	TenantID       string            `json:"tenant_id,omitempty" csv:"tenant_id,omitempty"`
 	UserID         string            `json:"user_id" csv:"user_id,omitempty"`
@@ -11,8 +12,8 @@ type User struct {
 	PositionID     string            `json:"position_id,omitempty" csv:"position_id,omitempty"`
 	Position       string            `json:"position,omitempty" csv:"position,omitempty"`
 	Organization   string            `json:"organization,omitempty" csv:"organization,omitempty"`
-	Groups         []string          `json:"groups"`
-	Apps           []ApplicationJSON `json:"apps"`
+	Groups         []string          `json:"groups,omitempty"`
+	Apps           []ApplicationJSON `json:"apps,omitempty"`
 	Identities     []Identity        `json:"identities,omitempty"`
 	ProfilePicture string            `json:"profile_picture,omitempty"`
 	CreatedAt      string            `json:"created_at,omitempty"`
