@@ -3,9 +3,9 @@ package models
 // ConnectionJSON is a struct representation for Connection
 type ConnectionJSON struct {
 	Type           string             `json:"_type,omitempty"`
-	ID             string             `json:"id"`
 	TenantID       string             `json:"tenant_id"`
 	ClientID       []string           `json:"client_id"`
+	ConnectionID   string             `json:"connection_id"`
 	ConnectionName string             `json:"connection_name,omitempty"`
 	ConnectionType string             `json:"connection_type"` // internal, ad, ldap, microsoft, google, mysql, postgre, etc
 	ConnectionData ConnectionDataJSON `json:"connection_data,omitempty"`
@@ -13,7 +13,6 @@ type ConnectionJSON struct {
 
 // ConnectionDataJSON is a struct representation for Connection Data
 type ConnectionDataJSON struct {
-	ID           string   `json:"id"`
 	ClientID     string   `json:"client_id,omitempty"`
 	ClientSecret string   `json:"client_secret,omitempty"`
 	AuthURL      string   `json:"auth_url,omitempty"`

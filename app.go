@@ -4,7 +4,7 @@ package models
 type ApplicationJSON struct {
 	Type           string   `json:"_type,omitempty"`
 	TenantID       string   `json:"tenant_id,omitempty"`
-	ID             string   `json:"id"`
+	AppID          string   `json:"app_id"`
 	AppName        string   `json:"app_name,omitempty"`
 	AppDescription string   `json:"app_description,omitempty"`
 	AppURL         string   `json:"app_url"`
