@@ -2,6 +2,7 @@ package models
 
 // ClientJSON is a struct representation for Client
 type ClientJSON struct {
+	Type          string   `json:"_type,omitempty"`
 	ID            string   `json:"id,omitempty"`
 	TenantID      string   `json:"tenant_id,omitempty"`
 	ClientName    string   `json:"client_name,omitempty"`
