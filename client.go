@@ -17,4 +17,5 @@ type ClientJSON struct {
 	LogoURI       string   `json:"logo_uri,omitempty"`
 	Contacts      []string `json:"contacts,omitempty"`
 	Scope         string   `json:"scope,omitempty"`
+	Members       []string `json:"members,omitempty"`
 }
