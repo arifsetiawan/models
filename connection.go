@@ -6,8 +6,8 @@ type ConnectionJSON struct {
 	TenantID       string             `json:"tenant_id"`
 	ClientID       []string           `json:"client_id"`
 	ConnectionID   string             `json:"connection_id"`
-	ConnectionName string             `json:"connection_name,omitempty"`
-	ConnectionType string             `json:"connection_type"` // internal, ad, ldap, microsoft, google, mysql, postgre, etc
+	ConnectionName string             `json:"connection_name,omitempty" validate:"required"`
+	ConnectionType string             `json:"connection_type" validate:"required"` // internal, ad, ldap, microsoft, google, mysql, postgre, etc
 	ConnectionData ConnectionDataJSON `json:"connection_data,omitempty"`
 }
 
