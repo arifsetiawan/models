@@ -21,6 +21,7 @@ type User struct {
 	LastLogin      string            `json:"last_login,omitempty"`
 	UserMetadata   interface{}       `json:"user_metadata"`
 	AppMetadata    interface{}       `json:"app_metadata"`
+	IsSuspended    bool              `json:"is_suspended"`
 }
 
 // UserInternal is representation for Internal Database
@@ -40,6 +41,7 @@ type UserInternal struct {
 	CreatedAt      string   `json:"created_at,omitempty"`
 	UpdatedAt      string   `json:"updated_at,omitempty"`
 	Provider       string   `json:"provider"`
+	IsSuspended    bool     `json:"is_suspended"`
 }
 
 // UserProfile is common object to store user data from provider
