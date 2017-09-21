@@ -16,7 +16,6 @@ type User struct {
 	Identities     []Identity        `json:"identities,omitempty"`
 	ProfilePicture string            `json:"profile_picture,omitempty"`
 	CreatedAt      string            `json:"created_at,omitempty"`
-	UpdatedAt      string            `json:"updated_at,omitempty"`
 	LastIP         string            `json:"last_ip,omitempty"`
 	LastLogin      string            `json:"last_login,omitempty"`
 	UserMetadata   interface{}       `json:"user_metadata"`
@@ -39,9 +38,10 @@ type UserInternal struct {
 	Password       string   `json:"password" csv:"password,omitempty"`
 	ProfilePicture string   `json:"profile_picture,omitempty"`
 	CreatedAt      string   `json:"created_at,omitempty"`
-	UpdatedAt      string   `json:"updated_at,omitempty"`
 	Provider       string   `json:"provider"`
 	IsSuspended    bool     `json:"is_suspended"`
+	UserType       string   `json:"user_type,omitempty"`
+	Hash           string   `json:"hash,omitempty"`
 }
 
 // UserProfile is common object to store user data from provider

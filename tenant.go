@@ -7,6 +7,7 @@ type Tenant struct {
 	Name                  string               `json:"tenant_name" validate:"required"`
 	Description           string               `json:"tenant_description,omitempty"`
 	DefaultAppCollections []TenantApplications `json:"default_app_collection"`
+	CreatedAt             string               `json:"created_at,omitempty"`
 }
 
 // TenantApplications is a representation for tenant's default app

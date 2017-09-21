@@ -10,6 +10,7 @@ type ApplicationJSON struct {
 	AppURL         string   `json:"app_url"`
 	AppIcon        string   `json:"app_icon,omitempty"`
 	Members        []string `json:"members"`
+	CreatedAt      string   `json:"created_at,omitempty"`
 }
 
 // AppSecretJSON is a struct for App Secret Object

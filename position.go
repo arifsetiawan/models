@@ -18,4 +18,5 @@ type PositionGroupJSON struct {
 	GroupName  string `json:"group_name"`
 	ParentID   string `json:"parent_id"`
 	ParentName string `json:"parent_name"`
+	CreatedAt  string `json:"created_at,omitempty"`
 }

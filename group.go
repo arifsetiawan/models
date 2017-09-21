@@ -8,4 +8,5 @@ type GroupJSON struct {
 	GroupName        string   `json:"group_name" validate:"required"`
 	GroupDescription string   `json:"group_description,omitempty"`
 	Members          []string `json:"members"`
+	CreatedAt        string   `json:"created_at,omitempty"`
 }

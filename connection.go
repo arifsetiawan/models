@@ -9,6 +9,7 @@ type ConnectionJSON struct {
 	ConnectionName string             `json:"connection_name,omitempty" validate:"required"`
 	ConnectionType string             `json:"connection_type" validate:"required"` // internal, ad, ldap, microsoft, google, mysql, postgre, etc
 	ConnectionData ConnectionDataJSON `json:"connection_data,omitempty"`
+	CreatedAt      string             `json:"created_at,omitempty"`
 }
 
 // ConnectionDataJSON is a struct representation for Connection Data
