@@ -2,25 +2,25 @@ package models
 
 // User is representation of data for IDP
 type User struct {
-	Type           string            `json:"_type,omitempty" csv:"_type,omitempty"`
-	UserID         string            `json:"user_id" validate:"required"`
-	TenantID       string            `json:"tenant_id" csv:"tenant_id,omitempty"`
-	Username       string            `json:"username" csv:"username,omitempty" validate:"required"`
-	Email          string            `json:"email" csv:"email,omitempty" validate:"required,email"`
-	Name           string            `json:"name" csv:"name,omitempty" validate:"required"`
-	PositionID     string            `json:"position_id,omitempty" csv:"position_id,omitempty"`
-	Position       string            `json:"position,omitempty" csv:"position,omitempty"`
-	Organization   string            `json:"organization,omitempty" csv:"organization,omitempty"`
-	Groups         []string          `json:"groups,omitempty"`
-	Apps           []ApplicationJSON `json:"apps,omitempty"`
-	Identities     []Identity        `json:"identities,omitempty"`
-	ProfilePicture string            `json:"profile_picture,omitempty"`
-	CreatedAt      string            `json:"created_at,omitempty"`
-	LastIP         string            `json:"last_ip,omitempty"`
-	LastLogin      string            `json:"last_login,omitempty"`
-	UserMetadata   interface{}       `json:"user_metadata"`
-	AppMetadata    interface{}       `json:"app_metadata"`
-	IsSuspended    bool              `json:"is_suspended"`
+	Type           string      `json:"_type,omitempty" csv:"_type,omitempty"`
+	UserID         string      `json:"user_id" validate:"required"`
+	TenantID       string      `json:"tenant_id" csv:"tenant_id,omitempty"`
+	Username       string      `json:"username" csv:"username,omitempty" validate:"required"`
+	Email          string      `json:"email" csv:"email,omitempty" validate:"required,email"`
+	Name           string      `json:"name" csv:"name,omitempty" validate:"required"`
+	PositionID     string      `json:"position_id,omitempty" csv:"position_id,omitempty"`
+	Position       string      `json:"position,omitempty" csv:"position,omitempty"`
+	Organization   string      `json:"organization,omitempty" csv:"organization,omitempty"`
+	Groups         []string    `json:"groups,omitempty"`
+	Apps           []AppJSON   `json:"apps,omitempty"`
+	Identities     []Identity  `json:"identities,omitempty"`
+	ProfilePicture string      `json:"profile_picture,omitempty"`
+	CreatedAt      string      `json:"created_at,omitempty"`
+	LastIP         string      `json:"last_ip,omitempty"`
+	LastLogin      string      `json:"last_login,omitempty"`
+	UserMetadata   interface{} `json:"user_metadata"`
+	AppMetadata    interface{} `json:"app_metadata"`
+	IsSuspended    bool        `json:"is_suspended"`
 }
 
 // UserInternal is representation for Internal Database

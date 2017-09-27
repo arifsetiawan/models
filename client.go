@@ -13,29 +13,35 @@ type ClientJSON struct {
 	Scope             string   `json:"scope,omitempty" validate:"required"`
 	Owner             string   `json:"owner,omitempty"`
 	PolicyURI         string   `json:"policy_uri,omitempty"`
-	TermsOfServiceURI string   `json:"tos_uri" gorethink:"tos_uri"`
+	TermsOfServiceURI string   `json:"tos_uri,omitempty"`
 	ClientURI         string   `json:"client_uri,omitempty"`
 	LogoURI           string   `json:"logo_uri,omitempty"`
 	Contacts          []string `json:"contacts,omitempty"`
-	Public            bool     `json:"public" gorethink:"public"`
-	Members           []string `json:"members,omitempty"`
+	Public            bool     `json:"public,omitempty"`
+	MemberUsers       []string `json:"member_users,omitempty"`
+	MemberGroups      []string `json:"member_groups,omitempty"`
 	CreatedAt         string   `json:"created_at"`
 }
 
-// Client is
-type Client struct {
-	ID                string   `json:"id" gorethink:"id"`
-	Name              string   `json:"client_name" gorethink:"client_name"`
-	Secret            string   `json:"client_secret,omitempty" gorethink:"client_secret"`
-	RedirectURIs      []string `json:"redirect_uris" gorethink:"redirect_uris"`
-	GrantTypes        []string `json:"grant_types" gorethink:"grant_types"`
-	ResponseTypes     []string `json:"response_types" gorethink:"response_types"`
-	Scope             string   `json:"scope" gorethink:"scope"`
-	Owner             string   `json:"owner" gorethink:"owner"`
-	PolicyURI         string   `json:"policy_uri" gorethink:"policy_uri"`
-	TermsOfServiceURI string   `json:"tos_uri" gorethink:"tos_uri"`
-	ClientURI         string   `json:"client_uri" gorethink:"client_uri"`
-	LogoURI           string   `json:"logo_uri" gorethink:"logo_uri"`
-	Contacts          []string `json:"contacts" gorethink:"contacts"`
-	Public            bool     `json:"public" gorethink:"public"`
+// Clear is
+func (c *ClientJSON) Clear() {
+	c.Secret = ""
+}
+
+// AppJSON is
+type AppJSON struct {
+	ID        string `json:"id,omitempty"`
+	Name      string `json:"name,omitempty"`
+	ClientURI string `json:"uri,omitempty"`
+	LogoURI   string `json:"logo_uri,omitempty"`
+}
+
+// NewAppJSON is
+func NewAppJSON(client *ClientJSON) *AppJSON {
+	return &AppJSON{
+		ID:        client.ID,
+		Name:      client.Name,
+		ClientURI: client.ClientURI,
+		LogoURI:   client.LogoURI,
+	}
 }
