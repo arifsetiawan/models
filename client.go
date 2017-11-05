@@ -28,6 +28,32 @@ func (c *ClientJSON) Clear() {
 	c.Secret = ""
 }
 
+// ClientSlimJSON is a struct representation for Client
+type ClientSlimJSON struct {
+	TenantID  string   `json:"tenant_id,omitempty"`
+	ID        string   `json:"id,omitempty"`
+	Name      string   `json:"client_name,omitempty" validate:"required"`
+	Scope     string   `json:"scope,omitempty" validate:"required"`
+	Owner     string   `json:"owner,omitempty"`
+	ClientURI string   `json:"client_uri,omitempty"`
+	LogoURI   string   `json:"logo_uri,omitempty"`
+	Contacts  []string `json:"contacts,omitempty"`
+}
+
+// NewClientSlimJSON is
+func NewClientSlimJSON(client *ClientJSON) *ClientSlimJSON {
+	return &ClientSlimJSON{
+		TenantID:  client.TenantID,
+		ID:        client.ID,
+		Name:      client.Name,
+		Scope:     client.Scope,
+		Owner:     client.Owner,
+		ClientURI: client.ClientURI,
+		LogoURI:   client.LogoURI,
+		Contacts:  client.Contacts,
+	}
+}
+
 // AppJSON is
 type AppJSON struct {
 	ID        string `json:"id,omitempty"`
